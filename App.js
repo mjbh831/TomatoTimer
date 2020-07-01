@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Splash from "./Components/Splash/Splash";
+import Home from "./Components/HomePage/Home";
 
 const fetchFonts = () => {
+  // loading custom fonts
   return Font.loadAsync({
     Neucha: require("./assets/fonts/Neucha-Regular.ttf"),
     LeckreliOne: require("./assets/fonts/LeckerliOne-Regular.ttf"),
@@ -15,6 +16,8 @@ const fetchFonts = () => {
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [currentPage, setCurrentPage] = useState("splash");
+
   if (!dataLoaded) {
     return (
       <AppLoading
@@ -24,6 +27,15 @@ export default function App() {
       />
     );
   }
+  // const routeHandler = () => {
+  //   console.log("this works");
+  // };
 
-  return <Splash />;
+  if (currentPage === "splash") {
+    return <Splash />;
+  }
+  if (currentPage === "home") {
+    return <Home />;
+  }
+  return { currentPage };
 }

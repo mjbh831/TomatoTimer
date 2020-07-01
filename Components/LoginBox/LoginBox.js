@@ -1,25 +1,35 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import LoginButton from "./LoginButton";
+import React, { useState } from "react";
+import Splash from "./LoginPages/Splash";
+import Login from "./LoginPages/Login";
+import LoginInfo from "./LoginPages/LoginInfo";
+import CreateAccount from "./LoginPages/CreateAccount";
 
 export default function LoginBox() {
-  return (
-    <View style={styles.box}>
-      <LoginButton />
-      <LoginButton />
-      <LoginButton />
-      <Text>Create New Account --></Text>
-    </View>
-  );
-}
+  const [currentLoginScreen, setCurrentLoginScreen] = useState("login");
+  const preLoginButtonHandler = () => {
+    setCurrentLoginScreen("login-info");
+  };
+  const newAccountButtonHandler = () => {
+    setCurrentLoginScreen("create-account");
+  };
 
-const styles = StyleSheet.create({
-  box: {
-    backgroundColor: "#fff",
-    width: "80%",
-    height: "50%",
-    top: "25%",
-    alignItems: "center",
-    justifyContent: "flex-end",
-  },
-});
+  if (currentLoginScreen === "splash") {
+    return <Splash />;
+  }
+  if (currentLoginScreen === "login") {
+    return (
+      <Login
+        preLoginButtonHandler={preLoginButtonHandler}
+        newAccountButtonHandler={newAccountButtonHandler}
+      />
+    );
+  }
+  if (currentLoginScreen === "login-info") {
+    return <LoginInfo newAccountButtonHandler={newAccountButtonHandler} />;
+  }
+  if (currentLoginScreen === "create-account") {
+    return <CreateAccount preLoginButtonHandler={preLoginButtonHandler} />;
+  }
+
+  return { currentLoginScreen };
+}
