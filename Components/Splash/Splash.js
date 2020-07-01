@@ -45,17 +45,17 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 45,
     fontFamily: "Neucha",
-    textShadowColor: "rgba(0, 0, 0, 0.55)",
-    textShadowOffset: { width: 2, height: 3 },
-    textShadowRadius: 10,
+    textShadowColor: "rgba(0, 0, 0, 0.4)",
+    textShadowOffset: { width: -2, height: 3 },
+    textShadowRadius: 5,
   },
   logoTextTimer: {
     color: "#fff",
     fontSize: 45,
     fontFamily: "LeckreliOne",
-    textShadowColor: "rgba(0, 0, 0, 0.55)",
-    textShadowOffset: { width: 2, height: 3 },
-    textShadowRadius: 10,
+    textShadowColor: "rgba(0, 0, 0, 0.4)",
+    textShadowOffset: { width: -2, height: 3 },
+    textShadowRadius: 5,
   },
 });
 export default Splash;

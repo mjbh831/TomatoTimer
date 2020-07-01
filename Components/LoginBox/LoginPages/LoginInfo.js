@@ -9,8 +9,11 @@ import { FontAwesome5 } from "@expo/vector-icons";
 export default function LoginInfo(props) {
   return (
     <View style={styles.box}>
-      <TouchableOpacity activeOpacity={0.9}>
-        <Text style={styles.plainText}>Forgot Username / Password?</Text>
+      <TouchableOpacity
+        activeOpacity={0.9}
+        onPress={props.newAccountButtonHandler}
+      >
+        <Text style={styles.plainText}>Create New Account{"  "}</Text>
       </TouchableOpacity>
 
       <RoundShape>
@@ -28,14 +31,8 @@ export default function LoginInfo(props) {
       <RoundShape onPress={props.loginButtonHandler}>
         <LoginButton />
       </RoundShape>
-      <TouchableOpacity
-        activeOpacity={0.9}
-        onPress={props.newAccountButtonHandler}
-      >
-        <Text style={styles.plainText}>
-          Create New Account{"  "}
-          <Entypo name="arrow-long-right" size={14} color="black" />
-        </Text>
+      <TouchableOpacity activeOpacity={0.9}>
+        <Text style={styles.plainText}>Forgot Username / Password?</Text>
       </TouchableOpacity>
     </View>
   );
