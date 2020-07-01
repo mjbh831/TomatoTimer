@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   text: {
-    fontFamily: "Raleway",
     fontSize: 25,
+    fontFamily: "Raleway-ExtraBold",
   },
 });

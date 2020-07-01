@@ -9,7 +9,7 @@ const fetchFonts = () => {
   return Font.loadAsync({
     Neucha: require("./assets/fonts/Neucha-Regular.ttf"),
     LeckreliOne: require("./assets/fonts/LeckerliOne-Regular.ttf"),
-    Raleway: require("./assets/fonts/Raleway-VariableFont_wght.ttf"),
+    "Raleway-ExtraBold": require("./assets/fonts/Raleway-ExtraBold.ttf"),
   });
 };
 
@@ -24,6 +24,7 @@ export default function App() {
       />
     );
   }
+
   return (
     <View style={styles.container}>
       <Splash>
