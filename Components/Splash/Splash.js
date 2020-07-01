@@ -15,7 +15,7 @@ const Splash = (props) => {
           <Text style={styles.logoTextTimer}>Timer</Text>
         </View>
       </View>
-      <LoginBox />
+      <LoginBox loginButtonHandler={props.loginButtonHandler} />
     </View>
   );
 };

@@ -28,7 +28,7 @@ export default function LoginInfo(props) {
           placeholder="Confirm Password"
         />
       </RoundShape>
-      <RoundShape onPress={props.newAccountButtonHandler}>
+      <RoundShape onPress={props.loginButtonHandler}>
         <LoginButton />
       </RoundShape>
       <TouchableOpacity

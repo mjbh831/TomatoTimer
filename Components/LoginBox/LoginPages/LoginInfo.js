@@ -25,7 +25,7 @@ export default function LoginInfo(props) {
           placeholder="Password"
         />
       </RoundShape>
-      <RoundShape>
+      <RoundShape onPress={props.loginButtonHandler}>
         <LoginButton />
       </RoundShape>
       <TouchableOpacity

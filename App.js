@@ -27,12 +27,12 @@ export default function App() {
       />
     );
   }
-  // const routeHandler = () => {
-  //   console.log("this works");
-  // };
+  const loginButtonHandler = () => {
+    setCurrentPage("home");
+  };
 
   if (currentPage === "splash") {
-    return <Splash />;
+    return <Splash loginButtonHandler={loginButtonHandler} />;
   }
   if (currentPage === "home") {
     return <Home />;

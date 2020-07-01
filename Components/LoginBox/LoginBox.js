@@ -4,7 +4,7 @@ import Login from "./LoginPages/Login";
 import LoginInfo from "./LoginPages/LoginInfo";
 import CreateAccount from "./LoginPages/CreateAccount";
 
-export default function LoginBox() {
+export default function LoginBox(props) {
   const [currentLoginScreen, setCurrentLoginScreen] = useState("login");
   const preLoginButtonHandler = () => {
     setCurrentLoginScreen("login-info");
@@ -25,10 +25,20 @@ export default function LoginBox() {
     );
   }
   if (currentLoginScreen === "login-info") {
-    return <LoginInfo newAccountButtonHandler={newAccountButtonHandler} />;
+    return (
+      <LoginInfo
+        loginButtonHandler={props.loginButtonHandler}
+        newAccountButtonHandler={newAccountButtonHandler}
+      />
+    );
   }
   if (currentLoginScreen === "create-account") {
-    return <CreateAccount preLoginButtonHandler={preLoginButtonHandler} />;
+    return (
+      <CreateAccount
+        preLoginButtonHandler={preLoginButtonHandler}
+        loginButtonHandler={props.loginButtonHandler}
+      />
+    );
   }
 
   return { currentLoginScreen };
