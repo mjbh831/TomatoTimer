@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function RoundLoginButtons() {
+export default function LoginButton() {
   return (
     <View style={styles.loginButton}>
       <Text style={styles.text}>LOGIN</Text>
@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 25,
+    borderRadius: 20,
     borderColor: "#000",
     borderWidth: 1,
   },
   text: {
     fontSize: 25,
     fontFamily: "Raleway-ExtraBold",
+    color: "#EC3023",
   },
 });

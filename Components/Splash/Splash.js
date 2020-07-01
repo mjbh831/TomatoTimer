@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import LoginBox from "../LoginBox/LoginBox";
 
 const Splash = (props) => {
   return (
@@ -14,8 +15,7 @@ const Splash = (props) => {
           <Text style={styles.logoTextTimer}>Timer</Text>
         </View>
       </View>
-
-      <View style={{ ...styles.children }}>{props.children}</View>
+      <LoginBox />
     </View>
   );
 };
@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#EC3023",
     alignItems: "center",
-    justifyContent: "space-around",
+    position: "relative",
   },
   logoContainer: {
     alignItems: "center",
+    position: "relative",
+    top: "15%",
   },
   splashLogo: {
     width: 125,
